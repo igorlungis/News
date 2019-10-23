@@ -4,9 +4,49 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Detail-->
+        <scene sceneID="Osy-j7-TkF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kh6-JE-VQ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="web" id="QWb-wl-wc7" customClass="WebViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7tm-A8-doG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6eM-ir-Fh8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6eM-ir-Fh8" firstAttribute="top" secondItem="Bw4-cm-261" secondAttribute="top" id="Vju-0r-MFc"/>
+                            <constraint firstAttribute="trailing" secondItem="6eM-ir-Fh8" secondAttribute="trailing" id="Ws7-DJ-T4V"/>
+                            <constraint firstAttribute="bottom" secondItem="6eM-ir-Fh8" secondAttribute="bottom" id="gaf-yk-o4Q"/>
+                            <constraint firstItem="6eM-ir-Fh8" firstAttribute="leading" secondItem="Bw4-cm-261" secondAttribute="leading" id="kUU-EK-SqB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bw4-cm-261"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" leftItemsSupplementBackButton="YES" id="Buc-3b-a9y">
+                        <barButtonItem key="backBarButtonItem" tag="2" title="Back" springLoaded="YES" id="5kU-dj-xlL">
+                            <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="6eM-ir-Fh8" id="n5t-pt-U57"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1824.6376811594205" y="42.857142857142854"/>
+        </scene>
         <!--News-->
         <scene sceneID="8Ku-ux-eC7">
             <objects>
@@ -71,6 +111,7 @@
                                     <outlet property="desc" destination="6gG-pg-vNc" id="5Pc-az-013"/>
                                     <outlet property="imgView" destination="3wS-ld-2gt" id="8FR-mb-f2i"/>
                                     <outlet property="title" destination="W4h-ZC-TBn" id="4ca-lt-w9V"/>
+                                    <segue destination="QWb-wl-wc7" kind="show" id="x8H-8x-FWy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -93,13 +134,17 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="1zB-2o-LAM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.093383854320000001" green="0.46640554950000002" blue="0.45098265269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="barTintColor" red="0.13621353587678742" green="0.17200165365773054" blue="0.50537357233502544" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                             <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PmV-JI-8RY">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="58E-2R-sh3" kind="relationship" relationship="rootViewController" id="kXa-as-Vhe"/>
                     </connections>

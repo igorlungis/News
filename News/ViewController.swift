@@ -63,8 +63,7 @@ class ViewController: UITableViewController {
         cell.title.text = self.articles?[indexPath.item].headline
         cell.desc.text = self.articles?[indexPath.item].desc
         cell.author.text = self.articles?[indexPath.item].author
-        cell.imgView.downloadImage(from: (self.articles?[indexPath.item].imageURL ?? "https://st.depositphotos.com/2605379/4441/i/950/depositphotos_44418347-stock-photo-black-question-mark.jpg"))
-        
+        cell.imgView.downloadImage(from: (self.articles?[indexPath.item].imageURL) ?? "https://image.flaticon.com/icons/png/512/25/25333.png")
         return cell
     }
     
@@ -74,6 +73,9 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.articles?.count ?? 0
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Singleton.shared.url = self.articles?[indexPath.item].url
     }
     
 }
