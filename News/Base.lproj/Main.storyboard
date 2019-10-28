@@ -8,17 +8,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Detail-->
+        <!--Details-->
         <scene sceneID="Osy-j7-TkF">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kh6-JE-VQ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="web" id="QWb-wl-wc7" customClass="WebViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7tm-A8-doG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6eM-ir-Fh8">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -35,7 +35,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bw4-cm-261"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" leftItemsSupplementBackButton="YES" id="Buc-3b-a9y">
+                    <navigationItem key="navigationItem" title="Details" leftItemsSupplementBackButton="YES" id="Buc-3b-a9y">
                         <barButtonItem key="backBarButtonItem" tag="2" title="Back" springLoaded="YES" id="5kU-dj-xlL">
                             <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         </barButtonItem>
@@ -47,12 +47,76 @@
             </objects>
             <point key="canvasLocation" x="1824.6376811594205" y="42.857142857142854"/>
         </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="ijZ-i5-duZ">
+            <objects>
+                <viewController storyboardIdentifier="MenuVC" id="Cue-kf-CfB" customClass="MenuViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vTl-Y9-OZP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jef-Ki-nvi">
+                                <rect key="frame" x="0.0" y="0.0" width="314" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="eBL-Eu-nmH" customClass="MenuTableViewCell" customModule="News" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="314" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eBL-Eu-nmH" id="RnK-Fa-r1W">
+                                            <rect key="frame" x="0.0" y="0.0" width="314" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHd-xd-3N4">
+                                                    <rect key="frame" x="0.0" y="3" width="314" height="94"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="tHd-xd-3N4" secondAttribute="bottom" constant="3" id="P5f-sg-QN9"/>
+                                                <constraint firstItem="tHd-xd-3N4" firstAttribute="leading" secondItem="RnK-Fa-r1W" secondAttribute="leading" id="W60-I1-xrQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="tHd-xd-3N4" secondAttribute="trailing" id="aCG-Dz-ttF"/>
+                                                <constraint firstItem="tHd-xd-3N4" firstAttribute="top" secondItem="RnK-Fa-r1W" secondAttribute="top" constant="3" id="pVw-o7-06E"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.093383854320000001" green="0.46640554950000002" blue="0.45098265269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="labelText" destination="tHd-xd-3N4" id="90e-B2-szM"/>
+                                            <segue destination="58E-2R-sh3" kind="show" id="hLr-js-KWw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Cue-kf-CfB" id="HkV-Xh-M88"/>
+                                    <outlet property="delegate" destination="Cue-kf-CfB" id="aMi-5z-pBP"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jef-Ki-nvi" firstAttribute="top" secondItem="vTl-Y9-OZP" secondAttribute="top" id="VrO-iU-05A"/>
+                            <constraint firstItem="jef-Ki-nvi" firstAttribute="leading" secondItem="bgV-4O-m2t" secondAttribute="leading" id="ar1-Us-14r"/>
+                            <constraint firstAttribute="bottom" secondItem="jef-Ki-nvi" secondAttribute="bottom" id="vSj-LF-L3Z"/>
+                            <constraint firstItem="bgV-4O-m2t" firstAttribute="trailing" secondItem="jef-Ki-nvi" secondAttribute="trailing" constant="100" id="wcU-Nk-Nin"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bgV-4O-m2t"/>
+                    </view>
+                    <connections>
+                        <outlet property="menuTableView" destination="jef-Ki-nvi" id="0ZV-K7-aKe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R9T-91-dtv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984" y="-731"/>
+        </scene>
         <!--News-->
         <scene sceneID="8Ku-ux-eC7">
             <objects>
                 <tableViewController id="58E-2R-sh3" customClass="ViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="142" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e07-eI-FNq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -120,7 +184,22 @@
                             <outlet property="delegate" destination="58E-2R-sh3" id="stV-UE-6OM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="News" id="KWp-m9-jzw"/>
+                    <navigationItem key="navigationItem" title="News" id="KWp-m9-jzw">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="nae-hc-jpw">
+                            <connections>
+                                <action selector="menuBarButtonItem:" destination="58E-2R-sh3" id="Jd0-fi-9vh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="zfh-s2-4Vb">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshControll:" destination="58E-2R-sh3" eventType="valueChanged" id="jra-4B-XHZ"/>
+                        </connections>
+                    </refreshControl>
+                    <connections>
+                        <outlet property="menuBarButtonItem" destination="nae-hc-jpw" id="Ef7-X9-mbe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDv-Wz-m7D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,7 +214,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <color key="barTintColor" red="0.13621353587678742" green="0.17200165365773054" blue="0.50537357233502544" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.093383854320000001" green="0.46640554950000002" blue="0.45098265269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                             <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -154,4 +233,7 @@
             <point key="canvasLocation" x="73.913043478260875" y="42.857142857142854"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hLr-js-KWw"/>
+    </inferredMetricsTieBreakers>
 </document>

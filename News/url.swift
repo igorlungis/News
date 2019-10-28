@@ -10,4 +10,5 @@
 class Singleton {
     static let shared = Singleton()
     var url: String?
+    var globalUrl = "https://newsapi.org/v2/top-headlines?country=ru&category=technology&apiKey=a06914598e3b4be0a536e78aebd7de71"
 }

@@ -8,19 +8,44 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class ViewController: UITableViewController {
- 
+    @IBOutlet weak var menuBarButtonItem: UIBarButtonItem!
+    
     var articles: [Article]? = []
+    var menuVC: MenuViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        menuVC = self.storyboard?.instantiateViewController(identifier: "MenuVC") as? MenuViewController
         
         fetchArticles()
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.handelSwipe))
+        swipeRight.direction = .right
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.handelSwipe))
+        swipeLeft.direction = .left
+        
+        self.view.addGestureRecognizer(swipeRight)
+        self.view.addGestureRecognizer(swipeLeft)
     }
-
+    
+    @objc func handelSwipe(gesture: UISwipeGestureRecognizer) {
+        switch gesture.direction {
+        case UISwipeGestureRecognizer.Direction.right:
+            print("Right")
+            showMenu()
+        case UISwipeGestureRecognizer.Direction.left:
+            print("left")
+            hideMenu()
+        default: break
+        }
+    }
+    
     func fetchArticles() {
         
-        let urlRequst = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=ru&category=technology&apiKey=a06914598e3b4be0a536e78aebd7de71")!)
+        let urlRequst = URLRequest(url: URL(string: AppDelegate.globURL)!)
         let task = URLSession.shared.dataTask(with: urlRequst) { (data, response, error) in
             if error != nil {
                 print(error)
@@ -77,6 +102,41 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Singleton.shared.url = self.articles?[indexPath.item].url
     }
+    
+    @IBAction func menuBarButtonItem(_ sender: UIBarButtonItem) {
+        if AppDelegate.isMenuVC {
+            showMenu()
+        } else {
+            hideMenu()
+        }
+    }
+    
+    func showMenu() {
+        UIView.animate(withDuration: 0.5) {
+            self.menuVC.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            self.addChild(self.menuVC)
+            self.view.addSubview(self.menuVC.view)
+            AppDelegate.isMenuVC = false
+        }
+    }
+           
+    func hideMenu() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.menuVC.view.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        }) { (finished) in
+            self.menuVC.view.removeFromSuperview()
+            AppDelegate.isMenuVC = true
+        }
+    }
+    
+    @IBAction func refreshControll(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.refreshControl?.endRefreshing()
+            self.fetchArticles()
+            self.tableView.reloadData()
+        }
+    }
+    
     
 }
 
