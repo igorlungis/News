@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+@available(iOS 13.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,9 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     static var globURL = "https://newsapi.org/v2/top-headlines?country=ru&category=technology&apiKey=a06914598e3b4be0a536e78aebd7de71"
     static var isMenuVC = true
+    
+    static var url: String?
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        window?.rootViewController = ContainerViewController()
+        
         return true
     }
 

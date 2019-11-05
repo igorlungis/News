@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 
+@available(iOS 13.0, *)
 class WebViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
@@ -16,6 +17,10 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webView.load(URLRequest(url: URL(string: Singleton.shared.url!)!))
+        webView.load(URLRequest(url: URL(string: AppDelegate.url!)!))
+    }
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
+
