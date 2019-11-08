@@ -12,9 +12,9 @@ import UIKit
 
 class ContainerViewController: UIViewController {
     
-    var controller: UIViewController!
-    var menuViewController: UIViewController!
-    var isMove = false
+    private var controller: UIViewController!
+    private var menuViewController: UIViewController!
+    private var isMove = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +22,14 @@ class ContainerViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(toggleMenu), name: NSNotification.Name(rawValue: "toggle"), object: nil)
     }
     
-    func configureViewController() {
+    private func configureViewController() {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
         controller = viewController
         view.addSubview(controller.view)
         addChild(controller)
     }
     
-    func configureMenuViewController() {
+    private func configureMenuViewController() {
         if menuViewController == nil {
             menuViewController = MenuViewController()
             view.insertSubview(menuViewController.view, at: 0)
@@ -38,7 +38,7 @@ class ContainerViewController: UIViewController {
         }
     }
     
-    func showMenuVC(shouldMove: Bool) {
+    private func showMenuVC(shouldMove: Bool) {
         if shouldMove {
             UIView.animate(withDuration: 0.5,
                            delay: 0,
@@ -65,6 +65,5 @@ class ContainerViewController: UIViewController {
         configureMenuViewController()
         isMove = !isMove
         showMenuVC(shouldMove: isMove)
-        print(isMove)
     }
 }

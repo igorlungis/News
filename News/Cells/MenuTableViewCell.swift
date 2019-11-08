@@ -11,6 +11,7 @@ import UIKit
 class MenuTableViewCell: UITableViewCell {
     
     static let reuseId = "MenuTableCell"
+    
     let myLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

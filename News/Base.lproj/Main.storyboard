@@ -41,7 +41,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Details" id="qDl-BV-joU">
+                                    <navigationItem title="Новости" id="qDl-BV-joU">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="eO2-x9-oXS">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
@@ -96,7 +96,7 @@
                                     <constraint firstAttribute="height" constant="35" id="0Fy-Ft-FM3"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="170" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RDl-wB-vel">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RDl-wB-vel">
                                 <rect key="frame" x="0.0" y="79" width="414" height="817"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -108,27 +108,27 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j0Y-V3-UI6">
-                                                    <rect key="frame" x="5" y="26.5" width="150" height="150"/>
+                                                    <rect key="frame" x="5" y="41.5" width="120" height="120"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="150" id="WpE-hC-N92"/>
-                                                        <constraint firstAttribute="width" constant="150" id="dKj-9S-hwj"/>
+                                                        <constraint firstAttribute="height" constant="120" id="WpE-hC-N92"/>
+                                                        <constraint firstAttribute="width" constant="120" id="dKj-9S-hwj"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOh-FJ-nqr">
-                                                    <rect key="frame" x="363" y="177.5" width="31" height="14.5"/>
+                                                    <rect key="frame" x="367.5" y="180" width="26.5" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbh-wO-19o">
+                                                    <rect key="frame" x="130" y="47.5" width="279" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbh-wO-19o">
-                                                    <rect key="frame" x="160" y="49.5" width="249" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYW-3v-Xff">
-                                                    <rect key="frame" x="160" y="26.5" width="249" height="18"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYW-3v-Xff">
+                                                    <rect key="frame" x="130" y="26.5" width="279" height="16"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -140,10 +140,10 @@
                                                 <constraint firstItem="hOh-FJ-nqr" firstAttribute="trailing" secondItem="o6f-LY-Cbn" secondAttribute="trailingMargin" id="9UN-Au-puD"/>
                                                 <constraint firstItem="j0Y-V3-UI6" firstAttribute="centerY" secondItem="o6f-LY-Cbn" secondAttribute="centerY" id="Csk-os-Xho"/>
                                                 <constraint firstItem="zbh-wO-19o" firstAttribute="top" secondItem="XYW-3v-Xff" secondAttribute="bottom" constant="5" id="D9b-9O-zfZ"/>
+                                                <constraint firstItem="XYW-3v-Xff" firstAttribute="top" secondItem="o6f-LY-Cbn" secondAttribute="top" constant="26.5" id="EhX-Ch-WsX"/>
                                                 <constraint firstAttribute="trailing" secondItem="zbh-wO-19o" secondAttribute="trailing" constant="5" id="RNH-hi-o7N"/>
                                                 <constraint firstAttribute="trailing" secondItem="XYW-3v-Xff" secondAttribute="trailing" constant="5" id="jt8-wj-Tbr"/>
                                                 <constraint firstItem="j0Y-V3-UI6" firstAttribute="leading" secondItem="o6f-LY-Cbn" secondAttribute="leading" constant="5" id="pnO-vV-Zip"/>
-                                                <constraint firstItem="XYW-3v-Xff" firstAttribute="top" secondItem="j0Y-V3-UI6" secondAttribute="top" id="qOM-s8-yoW"/>
                                                 <constraint firstItem="hOh-FJ-nqr" firstAttribute="bottom" secondItem="o6f-LY-Cbn" secondAttribute="bottomMargin" id="sTa-ND-xfx"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -173,7 +173,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="News" largeTitleDisplayMode="always" id="j7S-Ma-ce7">
+                                    <navigationItem title="Новости" largeTitleDisplayMode="always" id="j7S-Ma-ce7">
                                         <barButtonItem key="leftBarButtonItem" title="Menu" id="TLK-KE-ghy">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
@@ -200,6 +200,7 @@
                         <viewLayoutGuide key="safeArea" id="jh0-XX-azf"/>
                     </view>
                     <connections>
+                        <outlet property="navigationBar" destination="j7S-Ma-ce7" id="Ta8-EP-y6g"/>
                         <outlet property="tableView" destination="RDl-wB-vel" id="FMM-FK-O3P"/>
                     </connections>
                 </viewController>

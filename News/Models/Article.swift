@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Article: NSObject {
+class Article {
     
     var headline: String?
     var desc: String?

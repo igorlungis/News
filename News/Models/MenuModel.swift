@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+class MenuModelClass {
+    
 enum MenuModel: Int {
     
     case business
@@ -29,4 +31,18 @@ enum MenuModel: Int {
         }
     }
     
+    var url: String {
+        switch self {
+        case .business: return "https://newsapi.org/v2/top-headlines?country=ru&category=business&apiKey=a06914598e3b4be0a536e78aebd7de71"
+        case .entertainment: return "https://newsapi.org/v2/top-headlines?country=ru&category=entertainment&apiKey=a06914598e3b4be0a536e78aebd7de71"
+        case .health: return "https://newsapi.org/v2/top-headlines?country=ru&category=health&apiKey=a06914598e3b4be0a536e78aebd7de71"
+        case .science: return "https://newsapi.org/v2/top-headlines?country=ru&category=science&apiKey=a06914598e3b4be0a536e78aebd7de71"
+        case .sports: return "https://newsapi.org/v2/top-headlines?country=ru&category=sports&apiKey=a06914598e3b4be0a536e78aebd7de71"
+        case .technology: return "https://newsapi.org/v2/top-headlines?country=ru&category=technology&apiKey=a06914598e3b4be0a536e78aebd7de71"
+        }
+    }
+}
+    func getURL(model: MenuModel) -> URL {
+        return URL(string: model.url)!
+    }
 }
