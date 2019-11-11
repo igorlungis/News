@@ -8,8 +8,6 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
-
 class ContainerViewController: UIViewController {
     
     private var controller: UIViewController!

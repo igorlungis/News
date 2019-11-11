@@ -8,12 +8,12 @@
 
 import UIKit
 
-class Article {
+struct NewsApiModel: Decodable {
     
-    var headline: String?
-    var desc: String?
-    var author: String?
-    var url: String?
-    var imageURL: String?
+    var status: String?
+    var totalResults: Int?
+    var articles: [Articles]?
     
 }
+
+

@@ -8,7 +8,7 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
+//@available(iOS 13.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     static var globURL = URL(string: "https://newsapi.org/v2/top-headlines?country=ru&category=technology&apiKey=a06914598e3b4be0a536e78aebd7de71")
 
-    static var url: String?
     static var naviTitle: String?
     
 
