@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    private weak var imageTask: URLSessionDataTask?
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
     
@@ -66,8 +67,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.author.text = self.jsonData?.articles![indexPath.item].author ?? ""
 
         if self.jsonData?.articles![indexPath.item].urlToImage != nil {
-                   cell.imgView.downloadImage(from: (self.jsonData?.articles![indexPath.item].urlToImage)!)
-               } else {
+            cell.loadImage(url: (self.jsonData?.articles![indexPath.item].urlToImage)!) { image in cell.imgView.image = image }
+            } else {
                    cell.imgView.image = UIImage(named: "noImage.png")
                }
         return cell
@@ -88,22 +89,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBAction func menuButton(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggle"), object: nil)
-    }
-}
-
-extension UIImageView {
-    func downloadImage(from url: String) {
-        let urlRequest = URLRequest(url: URL(string: url)!)
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data,response,error) in
-            if error != nil {
-                print(error!)
-                return
-            }
-            DispatchQueue.main.async {
-                self.image = UIImage(data: data!)
-            }
-        }
-        task.resume()
     }
 }
 
